@@ -3,11 +3,11 @@ delight-async
 
 Part of the [Java Delight Suite](https://github.com/javadelight/delight-main#java-delight-suite).
 
-[![Build Status](https://travis-ci.org/mxro/async-api.svg?branch=master)](https://travis-ci.org/mxro/async-api)
+[![Build Status](https://travis-ci.org/javadelight/delight-async.svg)](https://travis-ci.org/javadelight/delight-async)
 
 Asynchronous utilities for Java and GWT applications.
 
-[All Project Reports](http://modules.appjangle.com/async-api/latest/project-reports.html)
+[All Project Reports](http://modules.appjangle.com/delight-async/latest/project-reports.html)
 
 ## More Reading
 
