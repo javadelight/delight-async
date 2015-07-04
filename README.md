@@ -1,6 +1,8 @@
 delight-async
 =========
 
+Part of the [Java Delight Suite](https://github.com/javadelight/delight-main#java-delight-suite).
+
 [![Build Status](https://travis-ci.org/mxro/async-api.svg?branch=master)](https://travis-ci.org/mxro/async-api)
 
 Asynchronous utilities for Java and GWT applications.
