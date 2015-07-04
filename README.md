@@ -1,4 +1,4 @@
-async-api
+delight-async
 =========
 
 [![Build Status](https://travis-ci.org/mxro/async-api.svg?branch=master)](https://travis-ci.org/mxro/async-api)
