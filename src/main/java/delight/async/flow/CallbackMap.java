@@ -3,18 +3,18 @@
  * 
  * All rights reserved.
  ******************************************************************************/
-package de.mxro.async.flow;
+package delight.async.flow;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.mxro.async.Value;
-import de.mxro.async.callbacks.ListCallback;
-import de.mxro.async.callbacks.ValueCallback;
 import de.mxro.fn.collections.CollectionsUtils;
 import de.mxro.fn.collections.IdentityArrayList;
+import delight.async.Value;
+import delight.async.callbacks.ListCallback;
+import delight.async.callbacks.ValueCallback;
 
 /**
  * This utility class supports in writing Java in a more asynchronous style.

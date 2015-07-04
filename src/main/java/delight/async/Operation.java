@@ -1,6 +1,6 @@
-package de.mxro.async;
+package delight.async;
 
-import de.mxro.async.callbacks.ValueCallback;
+import delight.async.callbacks.ValueCallback;
 
 /**
  * The definition of an asynchronous operation with no parameters.

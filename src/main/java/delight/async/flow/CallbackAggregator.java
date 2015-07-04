@@ -1,14 +1,14 @@
-package de.mxro.async.flow;
+package delight.async.flow;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.mxro.async.Value;
-import de.mxro.async.callbacks.ValueCallback;
-import de.mxro.async.helper.Aggregator;
 import de.mxro.fn.collections.CollectionsUtils;
+import delight.async.Value;
+import delight.async.callbacks.ValueCallback;
+import delight.async.helper.Aggregator;
 
 public final class CallbackAggregator<V> implements Aggregator<V> {
 

@@ -1,7 +1,7 @@
-package de.mxro.async;
+package delight.async;
 
-import de.mxro.async.callbacks.ValueCallback;
 import de.mxro.fn.Closure2;
+import delight.async.callbacks.ValueCallback;
 
 /**
  * A base template for an asynchronous function.

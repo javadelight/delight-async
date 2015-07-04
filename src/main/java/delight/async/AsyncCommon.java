@@ -1,17 +1,17 @@
-package de.mxro.async;
+package delight.async;
 
 import java.util.List;
 
-import de.mxro.async.callbacks.ListCallback;
-import de.mxro.async.callbacks.SimpleCallback;
-import de.mxro.async.callbacks.ValueCallback;
-import de.mxro.async.flow.CallbackAggregator;
-import de.mxro.async.flow.CallbackMap;
-import de.mxro.async.helper.Aggregator;
 import de.mxro.fn.Closure;
 import de.mxro.fn.Closure2;
 import de.mxro.fn.Success;
 import de.mxro.fn.SuccessFail;
+import delight.async.callbacks.ListCallback;
+import delight.async.callbacks.SimpleCallback;
+import delight.async.callbacks.ValueCallback;
+import delight.async.flow.CallbackAggregator;
+import delight.async.flow.CallbackMap;
+import delight.async.helper.Aggregator;
 
 /**
  * <p>

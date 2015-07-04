@@ -1,13 +1,13 @@
-package de.mxro.async.jre;
+package delight.async.jre;
 
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-import de.mxro.async.AsyncCommon;
-import de.mxro.async.Operation;
-import de.mxro.async.Value;
-import de.mxro.async.callbacks.ValueCallback;
+import delight.async.AsyncCommon;
+import delight.async.Operation;
+import delight.async.Value;
+import delight.async.callbacks.ValueCallback;
 
 /**
  * <p>

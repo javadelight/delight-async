@@ -3,7 +3,7 @@
  * 
  * All rights reserved.
  ******************************************************************************/
-package de.mxro.async.callbacks;
+package delight.async.callbacks;
 
 import java.util.List;
 

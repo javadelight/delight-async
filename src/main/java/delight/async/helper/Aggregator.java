@@ -1,6 +1,6 @@
-package de.mxro.async.helper;
+package delight.async.helper;
 
-import de.mxro.async.callbacks.ValueCallback;
+import delight.async.callbacks.ValueCallback;
 
 public interface Aggregator<V> {
 

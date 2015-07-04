@@ -3,9 +3,9 @@
  * 
  * All rights reserved.
  ******************************************************************************/
-package de.mxro.async.flow;
+package delight.async.flow;
 
-import de.mxro.async.Value;
+import delight.async.Value;
 
 /**
  * Allows to wait for a specified number of asynchronous operations.

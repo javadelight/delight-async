@@ -1,4 +1,4 @@
-package de.mxro.async;
+package delight.async;
 
 public class Value<T> {
 
