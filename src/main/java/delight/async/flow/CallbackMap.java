@@ -10,11 +10,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.mxro.fn.collections.CollectionsUtils;
-import de.mxro.fn.collections.IdentityArrayList;
 import delight.async.Value;
 import delight.async.callbacks.ListCallback;
 import delight.async.callbacks.ValueCallback;
+import delight.functional.collections.CollectionsUtils;
+import delight.functional.collections.IdentityArrayList;
 
 /**
  * This utility class supports in writing Java in a more asynchronous style.

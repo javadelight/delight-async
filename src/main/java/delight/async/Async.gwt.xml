@@ -4,7 +4,7 @@
 	<!-- Inherit the core Web Toolkit stuff. -->
 	<inherits name='com.google.gwt.user.User' />
 
-	<inherits name='de.mxro.fn.Fn' />
+	<inherits name='delight.functional.Fn' />
 	<!-- Other module inherits -->
 
 	<!-- Specify the paths for translatable code -->

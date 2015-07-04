@@ -2,10 +2,6 @@ package delight.async;
 
 import java.util.List;
 
-import de.mxro.fn.Closure;
-import de.mxro.fn.Closure2;
-import de.mxro.fn.Success;
-import de.mxro.fn.SuccessFail;
 import delight.async.callbacks.ListCallback;
 import delight.async.callbacks.SimpleCallback;
 import delight.async.callbacks.ValueCallback;

@@ -5,10 +5,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import de.mxro.fn.collections.CollectionsUtils;
 import delight.async.Value;
 import delight.async.callbacks.ValueCallback;
 import delight.async.helper.Aggregator;
+import delight.functional.collections.CollectionsUtils;
 
 public final class CallbackAggregator<V> implements Aggregator<V> {
 
