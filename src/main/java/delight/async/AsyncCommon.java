@@ -8,6 +8,10 @@ import delight.async.callbacks.ValueCallback;
 import delight.async.flow.CallbackAggregator;
 import delight.async.flow.CallbackMap;
 import delight.async.helper.Aggregator;
+import delight.functional.Closure;
+import delight.functional.Closure2;
+import delight.functional.Success;
+import delight.functional.SuccessFail;
 
 /**
  * <p>
