@@ -1,7 +1,5 @@
 package delight.async;
 
-import java.util.List;
-
 import delight.async.callbacks.ListCallback;
 import delight.async.callbacks.SimpleCallback;
 import delight.async.callbacks.ValueCallback;
@@ -12,6 +10,8 @@ import delight.functional.Closure;
 import delight.functional.Closure2;
 import delight.functional.Success;
 import delight.functional.SuccessFail;
+
+import java.util.List;
 
 /**
  * <p>

@@ -1,5 +1,10 @@
 package de.mxro.async.tests;
 
+import delight.async.Operation;
+import delight.async.callbacks.ValueCallback;
+import delight.async.jre.Async;
+import delight.functional.Success;
+
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.hamcrest.Matcher;
 import org.junit.Assert;
@@ -7,10 +12,6 @@ import org.junit.Test;
 import org.junit.internal.ArrayComparisonFailure;
 
 import de.oehme.xtend.junit.JUnit;
-import delight.async.Operation;
-import delight.async.callbacks.ValueCallback;
-import delight.async.jre.Async;
-import delight.functional.Success;
 
 @JUnit
 @SuppressWarnings("all")

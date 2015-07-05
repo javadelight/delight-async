@@ -1,14 +1,14 @@
 package delight.async.flow;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import delight.async.Value;
 import delight.async.callbacks.ValueCallback;
 import delight.async.helper.Aggregator;
 import delight.functional.collections.CollectionsUtils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public final class CallbackAggregator<V> implements Aggregator<V> {
 

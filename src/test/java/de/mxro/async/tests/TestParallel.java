@@ -1,5 +1,10 @@
 package de.mxro.async.tests;
 
+import delight.async.AsyncCommon;
+import delight.async.Operation;
+import delight.async.callbacks.ValueCallback;
+import delight.async.jre.Async;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,10 +15,6 @@ import org.junit.Test;
 import org.junit.internal.ArrayComparisonFailure;
 
 import de.oehme.xtend.junit.JUnit;
-import delight.async.AsyncCommon;
-import delight.async.Operation;
-import delight.async.callbacks.ValueCallback;
-import delight.async.jre.Async;
 
 @JUnit
 @SuppressWarnings("all")
