@@ -1,11 +1,15 @@
+[![Build Status](https://travis-ci.org/javadelight/delight-async.svg)](https://travis-ci.org/javadelight/delight-async)
+
 delight-async
 =========
 
+Asynchronous utilities for Java and GWT applications.
+
 Part of the [Java Delight Suite](https://github.com/javadelight/delight-main#java-delight-suite).
 
-[![Build Status](https://travis-ci.org/javadelight/delight-async.svg)](https://travis-ci.org/javadelight/delight-async)
 
-Asynchronous utilities for Java and GWT applications.
+
+
 
 [All Project Reports](http://modules.appjangle.com/delight-async/latest/project-reports.html)
 
