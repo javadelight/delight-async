@@ -95,13 +95,14 @@ public class AsyncCommon {
         return new SimpleCallback() {
 
             @Override
-            public void onFailure(final Throwable t) {
+            public void onFailure(final Throwa {
                 callback.onFailure(t);
             }
 
             @Override
             public void onSuccess() {
-                callback.onSuccess(Success.INSTANCE);
+                // TODO Auto-generated method stub
+
             }
         };
     }
