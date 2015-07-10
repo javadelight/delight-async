@@ -91,6 +91,21 @@ public class AsyncCommon {
 
     }
 
+    public final static SimpleCallback asSimpleCallback(final ValueCallback<Object> callback) {
+        return new SimpleCallback() {
+
+            @Override
+            public void onFailure(final Throwable t) {
+                callback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess() {
+                callback.onSuccess(Success.INSTANCE);
+            }
+        };
+    }
+
     public final static SimpleCallback wrap(final ValueCallback<Success> callback) {
         return new SimpleCallback() {
 
