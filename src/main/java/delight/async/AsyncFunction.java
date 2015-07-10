@@ -8,12 +8,12 @@ import delight.functional.Closure2;
  * 
  * @author Max Rohde
  *
- * @param <ParameterType>
- * @param <ResultType>
+ * @param <Input>
+ * @param <Output>
  */
-public interface AsyncFunction<ParameterType, ResultType> extends Closure2<ParameterType, ValueCallback<ResultType>> {
+public interface AsyncFunction<Input, Output> extends Closure2<Input, ValueCallback<Output>> {
 
     @Override
-    public void apply(ParameterType input, ValueCallback<ResultType> callback);
+    public void apply(Input input, ValueCallback<Output> callback);
 
 }
