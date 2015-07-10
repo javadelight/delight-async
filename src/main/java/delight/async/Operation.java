@@ -5,10 +5,10 @@ import delight.async.callbacks.ValueCallback;
 /**
  * The definition of an asynchronous operation with no parameters.
  *
- * @param <ResultType>
+ * @param <Result>
  */
-public interface Operation<ResultType> {
+public interface Operation<Result> {
 
-    public void apply(ValueCallback<ResultType> callback);
+    public void apply(ValueCallback<Result> callback);
 
 }
