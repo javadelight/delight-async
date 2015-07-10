@@ -91,23 +91,7 @@ public class AsyncCommon {
 
     }
 
-    public final static SimpleCallback asSimpleCallback(final ValueCallback<Object> callback) {
-        return new SimpleCallback() {
-
-            @Override
-            public void onFailure(final Throwa {
-                callback.onFailure(t);
-            }
-
-            @Override
-            public void onSuccess() {
-                // TODO Auto-generated method stub
-
-            }
-        };
-    }
-
-    public final static SimpleCallback wrap(final ValueCallback<Success> callback) {
+    public final static SimpleCallback asSimpleCallbackAndReturnSuccess(final ValueCallback<Object> callback) {
         return new SimpleCallback() {
 
             @Override
@@ -122,7 +106,22 @@ public class AsyncCommon {
         };
     }
 
-    public static final <T> ValueCallback<T> wrap(final SimpleCallback callback) {
+    public final static SimpleCallback asSimpleCallback(final ValueCallback<Success> callback) {
+        return new SimpleCallback() {
+
+            @Override
+            public void onFailure(final Throwable t) {
+                callback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess() {
+                callback.onSuccess(Success.INSTANCE);
+            }
+        };
+    }
+
+    public static final <T> ValueCallback<T> asValueCallback(final SimpleCallback callback) {
         return new ValueCallback<T>() {
 
             @Override
