@@ -233,7 +233,7 @@ public class AsyncCommon {
     private static <R> void sequentialInt(final List<Operation<R>> operations, final int idx, final List<R> results,
             final ValueCallback<List<R>> callback) {
 
-        if (operations.size() > idx) {
+        if (idx >= operations.size()) {
             callback.onSuccess(results);
             return;
         }
