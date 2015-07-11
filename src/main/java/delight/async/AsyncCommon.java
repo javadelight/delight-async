@@ -247,8 +247,8 @@ public class AsyncCommon {
 
             @Override
             public void onSuccess(final R value) {
-                // TODO Auto-generated method stub
-
+                results.add(value);
+                sequentialInt(operations, idx + 1, results, callback);
             }
         });
 
