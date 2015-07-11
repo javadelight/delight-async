@@ -234,8 +234,23 @@ public class AsyncCommon {
             final ValueCallback<List<R>> callback) {
 
         if (operations.size() >= idx) {
-
+            callback.onSuccess(results);
+            return;
         }
+
+        operations.get(idx).apply(new ValueCallback<R>() {
+
+            @Override
+            public void onFailure(final Throwable t) {
+                callback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess(final R value) {
+                // TODO Auto-generated method stub
+
+            }
+        });
 
     }
 
