@@ -223,6 +223,10 @@ public class AsyncCommon {
 
     }
 
+    public static <R> void sequential(final List<Operation<R>> operations, final ValueCallback<List<R>> callback) {
+
+    }
+
     public static <ResultType> Operation<List<ResultType>> parallelOp(final List<Operation<ResultType>> operations,
             final ValueCallback<List<ResultType>> callWhenCollected) {
 
