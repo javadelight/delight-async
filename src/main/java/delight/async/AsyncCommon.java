@@ -319,6 +319,16 @@ public class AsyncCommon {
         };
     }
 
+    public <R> ValueCallback<Success> asSuccessCallback(final ValueCallback<R> callback) {
+        return AsyncCommon.embed(callback, new Closure<Success>() {
+
+            @Override
+            public void apply(final Success o) {
+                callback.onSuccess(Success.INSTANCE);
+            }
+        });
+    }
+
     public static <V> ValueCallback<List<V>> asValueCallback(final ListCallback<V> callback) {
         return new ValueCallback<List<V>>() {
 
