@@ -224,6 +224,12 @@ public class AsyncCommon {
 
     }
 
+    /**
+     * Perform the listed operations sequentially.
+     * 
+     * @param operations
+     * @param callback
+     */
     public static <R> void sequential(final List<Operation<R>> operations, final ValueCallback<List<R>> callback) {
 
         sequentialInt(operations, 0, new ArrayList<R>(operations.size()), callback);
