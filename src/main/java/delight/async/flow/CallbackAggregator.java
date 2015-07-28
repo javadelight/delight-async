@@ -19,7 +19,7 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
     Value<Integer> callbacksDefined;
     Map<Integer, V> resultsMap;
     List<V> results;
-    Value<Boolean> exceptionReceived;
+    Value<Throwable> exceptionReceived;
     Throwable exception;
 
     @Override
@@ -39,12 +39,14 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                 @Override
                 public void onFailure(final Throwable t) {
                     synchronized (exceptionReceived) {
-                        if (exceptionReceived.get()) {
+                        if (exceptionReceived.get() != null) {
                             throw new RuntimeException(
-                                    "Another exception already received. Cannot sent exception to callback.", t);
+                                    "Another exception already received. Cannot sent exception to callback.\n  Previous exception: ["
+                                            + exceptionReceived.get() + "]",
+                                    t);
                         }
 
-                        exceptionReceived.set(true);
+                        exceptionReceived.set(t);
 
                         callback.onFailure(t);
                     }
@@ -93,7 +95,7 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
         this.expected = expected;
         this.callback = callback;
 
-        this.exceptionReceived = new Value<Boolean>(false);
+        this.exceptionReceived = new Value<Throwable>(null);
         this.callbacksDefined = new Value<Integer>(0);
         this.results = new ArrayList<V>(expected);
         this.resultsMap = new HashMap<Integer, V>();
