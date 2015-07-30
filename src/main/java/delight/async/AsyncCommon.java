@@ -341,4 +341,14 @@ public class AsyncCommon {
         };
     }
 
+    public static <V> ValueCallback<V> asValueCallback(final ValueCallback<Success> callback) {
+        return AsyncCommon.embed(callback, new Closure<V>() {
+
+            @Override
+            public void apply(final V o) {
+                callback.onSuccess(Success.INSTANCE);
+            }
+        });
+    }
+
 }
