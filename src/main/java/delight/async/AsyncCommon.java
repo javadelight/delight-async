@@ -260,20 +260,6 @@ public class AsyncCommon {
 
     }
 
-    // public static <ResultType> Operation<List<ResultType>> parallelOp(final
-    // List<Operation<ResultType>> operations,
-    // final ValueCallback<List<ResultType>> callWhenCollected) {
-    //
-    // return new Operation<List<ResultType>>() {
-    //
-    // @Override
-    // public void apply(final ValueCallback<List<ResultType>> callback) {
-    // parallel(operations, callWhenCollected);
-    // }
-    // };
-    //
-    // }
-
     /**
      * <p>
      * Performs the provided operation on all elements of the provided list and
