@@ -41,7 +41,7 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                     synchronized (exceptionReceived) {
                         if (exceptionReceived.get() != null) {
                             throw new RuntimeException(
-                                    "Another exception already received. Cannot sent exception to callback.\n  Previous exception: ["
+                                    "Another exception already received. Cannot send exception to callback.\n  Previous exception: ["
                                             + exceptionReceived.get() + "]",
                                     t);
                         }
