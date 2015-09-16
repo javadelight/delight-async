@@ -5,6 +5,7 @@ import delight.async.Operation;
 import delight.async.Value;
 import delight.async.callbacks.ValueCallback;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
@@ -80,6 +81,10 @@ public class Async extends AsyncCommon {
     public static final <T> T waitFor(final Operation<T> operation) {
         return waitFor(30000, operation);
 
+    }
+
+    public static <ResultType, OP extends Operation<ResultType>> void parallel(final OP[] operationsRaw) {
+        parallel(Arrays.asList(operationsRaw));
     }
 
     public static <ResultType, OP extends Operation<ResultType>> void parallel(final List<OP> operationsRaw) {
