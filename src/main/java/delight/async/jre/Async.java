@@ -82,7 +82,7 @@ public class Async extends AsyncCommon {
 
     }
 
-    public static <ResultType> void parallel(final Object operationsRaw) {
+    public static <ResultType> void parallel(final Operation<ResultType> operationsRaw) {
         waitFor(new Operation<List<ResultType>>() {
 
             @Override

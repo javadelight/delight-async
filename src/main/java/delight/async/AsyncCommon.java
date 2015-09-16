@@ -201,28 +201,6 @@ public class AsyncCommon {
         return new CallbackAggregator<V>(results, callWhenCollected);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <ResultType> void parallel(final Object operationsRaw,
-            final ValueCallback<List<ResultType>> callWhenCollected) {
-
-        final Operation[] operations;
-
-        if (operationsRaw instanceof List) {
-            operations = ((List<Operation>) operationsRaw).toArray(new Operation[0]);
-        } else if (operationsRaw instanceof Operation[]) {
-            operations = (Operation[]) operationsRaw;
-        } else {
-            throw new IllegalArgumentException("Invalid operations list type [" + operationsRaw.getClass() + "].");
-        }
-
-        final Aggregator<ResultType> aggregator = collect(operations.length, callWhenCollected);
-
-        for (final Operation op : operations) {
-            op.apply(aggregator.createCallback());
-        }
-
-    }
-
     public static <R> void parallel(final List<Operation<R>> operations, final ValueCallback<List<R>> callback) {
         final Aggregator<R> aggregator = collect(operations.size(), callback);
 
