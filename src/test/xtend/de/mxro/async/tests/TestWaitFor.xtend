@@ -1,9 +1,9 @@
 package de.mxro.async.tests
 
-import de.mxro.fn.Success
 import de.oehme.xtend.junit.JUnit
+import delight.async.jre.Async
+import delight.functional.Success
 import org.junit.Test
-import de.mxro.async.jre.Async
 
 @JUnit
 class TestWaitFor {
