@@ -1,197 +1,222 @@
 package de.mxro.async.tests;
 
-import delight.async.Operation;
-import delight.async.callbacks.ValueCallback;
-import delight.async.jre.Async;
-import delight.functional.Success;
-
+import de.oehme.xtend.junit.JUnit;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.hamcrest.Matcher;
-import org.junit.Assert;
 import org.junit.Test;
 import org.junit.internal.ArrayComparisonFailure;
-
-import de.oehme.xtend.junit.JUnit;
 
 @JUnit
 @SuppressWarnings("all")
 public class TestWaitFor {
   @Test
   public void test() {
-    final Operation<Success> _function = new Operation<Success>() {
-      public void apply(final ValueCallback<Success> cb) {
-        cb.onSuccess(Success.INSTANCE);
-      }
-    };
-    Async.<Success>waitFor(_function);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method or field Async is undefined for the type TestWaitFor"
+      + "\nThe method onSuccess is undefined for the type TestWaitFor"
+      + "\nThe method or field Success is undefined for the type TestWaitFor"
+      + "\nThere is no context to infer the closure\'s argument types from. Consider typing the arguments or put the closures into a typed context."
+      + "\nwaitFor cannot be resolved"
+      + "\nINSTANCE cannot be resolved");
   }
   
   private static void assertArrayEquals(final Object[] expecteds, final Object[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final byte[] expecteds, final byte[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final char[] expecteds, final char[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final short[] expecteds, final short[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final int[] expecteds, final int[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final long[] expecteds, final long[] actuals) {
-    Assert.assertArrayEquals(expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final Object[] expecteds, final Object[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final byte[] expecteds, final byte[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final char[] expecteds, final char[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final short[] expecteds, final short[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final int[] expecteds, final int[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final long[] expecteds, final long[] actuals) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final double[] expecteds, final double[] actuals, final double delta) {
-    Assert.assertArrayEquals(expecteds, actuals, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final float[] expecteds, final float[] actuals, final float delta) {
-    Assert.assertArrayEquals(expecteds, actuals, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final double[] expecteds, final double[] actuals, final double delta) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertArrayEquals(final String message, final float[] expecteds, final float[] actuals, final float delta) throws ArrayComparisonFailure {
-    Assert.assertArrayEquals(message, expecteds, actuals, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertEquals(final Object expected, final Object actual) {
-    Assert.assertEquals(expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertEquals(final long expected, final long actual) {
-    Assert.assertEquals(expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
-  private static void assertEquals(final String arg0, final Object arg1, final Object arg2) {
-    Assert.assertEquals(arg0, arg1, arg2);
+  private static void assertEquals(final String message, final Object expected, final Object actual) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertEquals(final String message, final long expected, final long actual) {
-    Assert.assertEquals(message, expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertEquals(final double expected, final double actual, final double delta) {
-    Assert.assertEquals(expected, actual, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertEquals(final String message, final double expected, final double actual, final double delta) {
-    Assert.assertEquals(message, expected, actual, delta);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertFalse(final boolean condition) {
-    Assert.assertFalse(condition);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertFalse(final String message, final boolean condition) {
-    Assert.assertFalse(message, condition);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNotNull(final Object object) {
-    Assert.assertNotNull(object);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNotNull(final String message, final Object object) {
-    Assert.assertNotNull(message, object);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNotSame(final Object unexpected, final Object actual) {
-    Assert.assertNotSame(unexpected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNotSame(final String message, final Object unexpected, final Object actual) {
-    Assert.assertNotSame(message, unexpected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNull(final Object object) {
-    Assert.assertNull(object);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertNull(final String message, final Object object) {
-    Assert.assertNull(message, object);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertSame(final Object expected, final Object actual) {
-    Assert.assertSame(expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertSame(final String message, final Object expected, final Object actual) {
-    Assert.assertSame(message, expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static <T extends Object> void assertThat(final T actual, final Matcher<T> matcher) {
-    Assert.<T>assertThat(actual, matcher);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
-  private static <T extends Object> void assertThat(final String arg0, final T arg1, final Matcher<T> arg2) {
-    Assert.<T>assertThat(arg0, arg1, arg2);
+  private static <T extends Object> void assertThat(final String reason, final T actual, final Matcher<T> matcher) {
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertTrue(final boolean condition) {
-    Assert.assertTrue(condition);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void assertTrue(final String message, final boolean condition) {
-    Assert.assertTrue(message, condition);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void fail() {
-    Assert.fail();
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static void fail(final String message) {
-    Assert.fail(message);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static <T extends Object, U extends T> void operator_doubleArrow(final T actual, final U expected) {
-    Assert.assertEquals(expected, actual);
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
   
   private static <T extends Exception> void isThrownBy(final Class<T> expected, final Procedure0 block) {
-    try {
-    	block.apply();
-    	Assert.fail("Expected a " + expected.getName());
-    } catch (Exception e) {
-    	Class<?> actual = e.getClass();
-    	Assert.assertTrue(
-    		"Expected a " + expected.getName() + " but got " + actual.getName(), 
-    		expected.isAssignableFrom(actual)
-    	);
-    }
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe type TestWaitFor is already defined in TestWaitFor.java.");
   }
 }

@@ -1,9 +1,9 @@
 package de.mxro.async.tests
 
-import de.mxro.async.AsyncCommon
-import de.mxro.async.Operation
-import de.mxro.async.jre.Async
 import de.oehme.xtend.junit.JUnit
+import delight.async.AsyncCommon
+import delight.async.Operation
+import delight.async.jre.Async
 import java.util.ArrayList
 import org.junit.Test
 
