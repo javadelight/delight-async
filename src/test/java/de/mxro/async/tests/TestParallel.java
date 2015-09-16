@@ -33,13 +33,13 @@ public class TestParallel {
       }
     };
     ops.add(_function_1);
-    final Operation<List<Object>> _function_2 = new Operation<List<Object>>() {
+    final Operation<List<String>> _function_2 = new Operation<List<String>>() {
       @Override
-      public void apply(final ValueCallback<List<Object>> cb) {
-        AsyncCommon.<Object, Operation<String>>parallel(ops, cb);
+      public void apply(final ValueCallback<List<String>> cb) {
+        AsyncCommon.<String, Operation<String>>parallel(ops, cb);
       }
     };
-    final List<Object> res = Async.<List<Object>>waitFor(_function_2);
+    final List<String> res = Async.<List<String>>waitFor(_function_2);
     int _size = res.size();
     boolean _equals = (_size == 2);
     TestParallel.<Boolean, Boolean>operator_doubleArrow(Boolean.valueOf(_equals), Boolean.valueOf(true));

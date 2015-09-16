@@ -208,15 +208,18 @@ public class AsyncCommon {
         parallel(Arrays.asList(operations), callback);
     }
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    public static <R, OP extends Operation> void parallel(final List<OP> operations,
+    public static <R, OP extends Operation<R>> void parallel(final List<OP> operations,
             final ValueCallback<List<R>> callback) {
         final Aggregator<R> aggregator = collect(operations.size(), callback);
 
-        for (final Operation<R> op : (List<Operation<R>>) operations) {
+        for (final Operation<R> op : operations) {
             op.apply(aggregator.createCallback());
         }
 
+    }
+
+    public static <R, OP> void parallelUnsafe(final List<OP> operations, final ValueCallback<List<R>> callback) {
+        parallel((List<Operation<R>>) operations, callback);
     }
 
     /**
