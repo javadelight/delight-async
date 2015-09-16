@@ -207,8 +207,7 @@ public class AsyncCommon {
         parallel(Arrays.asList(operations), callback);
     }
 
-    public static <R, OP extends Operation<R>> void parallel(final List<OP> operations,
-            final ValueCallback<List<R>> callback) {
+    public static <R, OP> void parallel(final List<OP> operations, final ValueCallback<List<R>> callback) {
         final Aggregator<R> aggregator = collect(operations.size(), callback);
 
         for (final Operation<R> op : operations) {
