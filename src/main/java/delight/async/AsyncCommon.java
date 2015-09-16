@@ -89,7 +89,6 @@ public class AsyncCommon {
         for (final InputType input : inputs) {
             operation.apply(input, callbackMap.createCallback(input));
         }
-
     }
 
     public final static SimpleCallback asSimpleCallbackAndReturnSuccess(final ValueCallback<Object> callback) {
@@ -224,7 +223,12 @@ public class AsyncCommon {
 
     }
 
-    public static <R> void parallel(final List<Operation<R>> operation, final ValueCallback<List<R>> callback) {
+    public static <R> void parallel(final List<Operation<R>> operations, final ValueCallback<List<R>> callback) {
+        final Aggregator<R> aggregator = collect(operations.size(), callback);
+
+        for (final Operation<R> op : operations) {
+            op.apply(aggregator.createCallback());
+        }
 
     }
 
