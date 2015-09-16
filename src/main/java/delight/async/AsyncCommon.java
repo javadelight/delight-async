@@ -202,7 +202,7 @@ public class AsyncCommon {
         return new CallbackAggregator<V>(results, callWhenCollected);
     }
 
-    public static <R, OP extends Operation<R>> void parallel(final OP[] operations,
+    public static <R, OP extends Operation<R>> void parallelAr(final OP[] operations,
             final ValueCallback<List<R>> callback) {
         parallel(Arrays.asList(operations), callback);
     }

@@ -5,6 +5,7 @@ import delight.async.AsyncCommon;
 import delight.async.Operation;
 import delight.async.callbacks.ValueCallback;
 import delight.async.jre.Async;
+import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.hamcrest.Matcher;
@@ -17,8 +18,31 @@ import org.junit.internal.ArrayComparisonFailure;
 public class TestParallel {
   @Test
   public void test_with_list() {
-    throw new Error("Unresolved compilation problems:"
-      + "\nType mismatch: cannot convert from ArrayList<Operation<String>> to Operation<String>[]");
+    final ArrayList<Operation<String>> ops = new ArrayList<Operation<String>>();
+    final Operation<String> _function = new Operation<String>() {
+      @Override
+      public void apply(final ValueCallback<String> cb) {
+        cb.onSuccess("123");
+      }
+    };
+    ops.add(_function);
+    final Operation<String> _function_1 = new Operation<String>() {
+      @Override
+      public void apply(final ValueCallback<String> cb) {
+        cb.onSuccess("456");
+      }
+    };
+    ops.add(_function_1);
+    final Operation<List<String>> _function_2 = new Operation<List<String>>() {
+      @Override
+      public void apply(final ValueCallback<List<String>> cb) {
+        AsyncCommon.<String, Operation<String>>parallel(ops, cb);
+      }
+    };
+    final List<String> res = Async.<List<String>>waitFor(_function_2);
+    int _size = res.size();
+    boolean _equals = (_size == 2);
+    TestParallel.<Boolean, Boolean>operator_doubleArrow(Boolean.valueOf(_equals), Boolean.valueOf(true));
   }
   
   @Test
@@ -39,7 +63,7 @@ public class TestParallel {
     final Operation<List<?>> _function_2 = new Operation<List<?>>() {
       @Override
       public void apply(final ValueCallback<List<?>> cb) {
-        AsyncCommon.parallel(ops, cb);
+        AsyncCommon.parallelAr(ops, cb);
       }
     };
     final List<?> res = Async.<List<?>>waitFor(_function_2);

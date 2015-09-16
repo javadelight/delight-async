@@ -49,7 +49,7 @@ class TestParallel {
 
 		val res = Async.waitFor(
 			[ cb |
-				AsyncCommon.parallel(ops, cb)
+				AsyncCommon.parallelAr(ops, cb)
 			])
 
 		(res.size == 2) => true
