@@ -12,6 +12,7 @@ import delight.functional.Success;
 import delight.functional.SuccessFail;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -199,6 +200,11 @@ public class AsyncCommon {
      */
     public final static <V> Aggregator<V> collect(final int results, final ValueCallback<List<V>> callWhenCollected) {
         return new CallbackAggregator<V>(results, callWhenCollected);
+    }
+
+    public static <R, OP extends Operation<R>> void parallel(final OP[] operations,
+            final ValueCallback<List<R>> callback) {
+        parallel(Arrays.asList(operations), callback);
     }
 
     public static <R, OP extends Operation<R>> void parallel(final List<OP> operations,
