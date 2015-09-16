@@ -224,6 +224,10 @@ public class AsyncCommon {
 
     }
 
+    public static <R> void parallel(final List<Operation<R>> operation, final ValueCallback<List<R>> callback) {
+
+    }
+
     /**
      * Perform the listed operations sequentially.
      * 
