@@ -310,6 +310,21 @@ public class AsyncCommon {
         };
     }
 
+    public static final SimpleCallback embed(final SimpleCallback toCallback, final Runnable onSuccess) {
+        return new SimpleCallback() {
+
+            @Override
+            public void onFailure(final Throwable t) {
+                toCallback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess() {
+                onSuccess.run();
+            }
+        };
+    }
+
     public static <V> ValueCallback<List<V>> asValueCallback(final ListCallback<V> callback) {
         return new ValueCallback<List<V>>() {
 
