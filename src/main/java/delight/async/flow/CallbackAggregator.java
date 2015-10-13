@@ -39,11 +39,16 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                 @Override
                 public void onFailure(final Throwable t) {
                     synchronized (exceptionReceived) {
+                        // t.printStackTrace();
+                        // only trigger onFailure for first exception received
                         if (exceptionReceived.get() != null) {
-                            throw new RuntimeException(
-                                    "Another exception already received. Cannot send exception to callback.\n  Previous exception: ["
-                                            + exceptionReceived.get() + "]\n  This exception: [" + t + "]",
-                                    exceptionReceived.get());
+                            return;
+                            // throw new RuntimeException(
+                            // "Another exception already received. Cannot send
+                            // exception to callback.\n Previous exception: ["
+                            // + exceptionReceived.get() + "]\n This exception:
+                            // [" + t + "]",
+                            // exceptionReceived.get());
                         }
 
                         exceptionReceived.set(t);
