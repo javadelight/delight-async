@@ -122,6 +122,21 @@ public class AsyncCommon {
         };
     }
 
+    public static final <T> ValueCallback<List<T>> asListCallback(final ValueCallback<Success> callback) {
+        return new ValueCallback<List<T>>() {
+
+            @Override
+            public void onFailure(final Throwable t) {
+                callback.onFailure(t);
+            }
+
+            @Override
+            public void onSuccess(final List<T> value) {
+                callback.onSuccess(Success.INSTANCE);
+            }
+        };
+    }
+
     public static final <T> ValueCallback<T> asValueCallback(final SimpleCallback callback) {
         return new ValueCallback<T>() {
 
