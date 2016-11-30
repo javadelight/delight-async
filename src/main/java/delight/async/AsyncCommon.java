@@ -225,11 +225,52 @@ public class AsyncCommon {
 
     public static <R, OP extends Operation<R>> void parallel(final List<OP> operations,
             final ValueCallback<List<R>> callback) {
-        final Aggregator<R> aggregator = collect(operations.size(), callback);
+        parallel(operations, Integer.MAX_VALUE, callback);
 
-        for (final Operation<R> op : operations) {
-            op.apply(aggregator.createCallback());
+    }
+
+    public static <R, OP extends Operation<R>> void parallel(final List<OP> operations, final int maxParallelOps,
+            final ValueCallback<List<R>> callback) {
+
+        if (operations.size() <= maxParallelOps) {
+
+            final Aggregator<R> aggregator = collect(operations.size(), callback);
+
+            for (final Operation<R> op : operations) {
+                op.apply(aggregator.createCallback());
+            }
+            return;
         }
+
+        final List<OP> toRun = operations.subList(0, maxParallelOps);
+
+        final List<OP> remaining = operations.subList(maxParallelOps, operations.size());
+
+        assert operations.size() == toRun.size() + remaining.size() : "Invalid list split: " + operations.size()
+                + " into (" + toRun.size() + " and " + remaining.size() + ")";
+
+        parallel(toRun, maxParallelOps, AsyncCommon.embed(callback, new Closure<List<R>>() {
+
+            @Override
+            public void apply(final List<R> head) {
+
+                parallel(remaining, maxParallelOps, embed(callback, new Closure<List<R>>() {
+
+                    @Override
+                    public void apply(final List<R> tail) {
+
+                        final List<R> all = new ArrayList<R>(head.size() + tail.size());
+                        all.addAll(head);
+                        all.addAll(tail);
+
+                        callback.onSuccess(all);
+
+                    }
+
+                }));
+
+            }
+        }));
 
     }
 

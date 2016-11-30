@@ -7,6 +7,7 @@ import delight.async.callbacks.ValueCallback;
 import delight.async.jre.Async;
 import java.util.ArrayList;
 import java.util.List;
+import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.hamcrest.Matcher;
 import org.junit.Assert;
@@ -69,6 +70,31 @@ public class TestParallel {
     final List<Object> res = Async.<List<Object>>waitFor(_function_2);
     int _size = res.size();
     boolean _equals = (_size == 2);
+    TestParallel.<Boolean, Boolean>operator_doubleArrow(Boolean.valueOf(_equals), Boolean.valueOf(true));
+  }
+  
+  @Test
+  public void test_with_maxOps() {
+    final List<Operation<String>> ops = new ArrayList<Operation<String>>();
+    IntegerRange _upTo = new IntegerRange(1, 100);
+    for (final Integer i : _upTo) {
+      final Operation<String> _function = new Operation<String>() {
+        @Override
+        public void apply(final ValueCallback<String> cb) {
+          cb.onSuccess("1");
+        }
+      };
+      ops.add(_function);
+    }
+    final Operation<List<String>> _function_1 = new Operation<List<String>>() {
+      @Override
+      public void apply(final ValueCallback<List<String>> cb) {
+        AsyncCommon.<String, Operation<String>>parallel(ops, 10, cb);
+      }
+    };
+    final List<String> res = Async.<List<String>>waitFor(_function_1);
+    int _size = res.size();
+    boolean _equals = (_size == 100);
     TestParallel.<Boolean, Boolean>operator_doubleArrow(Boolean.valueOf(_equals), Boolean.valueOf(true));
   }
   
