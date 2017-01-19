@@ -229,7 +229,7 @@ public class AsyncCommon {
 
     }
 
-    public static <R, OP extends Operation<R>> void parallel(final List<OP> operations, final int maxParallelOps,
+    public final static <R, OP extends Operation<R>> void parallel(final List<OP> operations, final int maxParallelOps,
             final ValueCallback<List<R>> callback) {
 
         if (operations.size() <= maxParallelOps) {
