@@ -107,7 +107,7 @@ public class AsyncCommon {
         };
     }
 
-    public final static SimpleCallback asSimpleCallback(final ValueCallback<Success> callback) {
+    public final static <T> SimpleCallback asSimpleCallback(final ValueCallback<T> callback) {
         return new SimpleCallback() {
 
             @Override
@@ -117,7 +117,7 @@ public class AsyncCommon {
 
             @Override
             public void onSuccess() {
-                callback.onSuccess(Success.INSTANCE);
+                callback.onSuccess((T) Success.INSTANCE);
             }
         };
     }
