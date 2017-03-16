@@ -232,6 +232,11 @@ public class AsyncCommon {
     public final static <R, OP extends Operation<R>> void parallel(final List<OP> operations, final int maxParallelOps,
             final ValueCallback<List<R>> callback) {
 
+        if (operations.size() == 0) {
+            callback.onSuccess(new ArrayList<R>(0));
+            return;
+        }
+
         if (operations.size() <= maxParallelOps) {
 
             final Aggregator<R> aggregator = collect(operations.size(), callback);
