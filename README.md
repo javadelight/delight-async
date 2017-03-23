@@ -7,8 +7,24 @@ Asynchronous utilities for Java and GWT applications.
 
 Part of the [Java Delight Suite](https://github.com/javadelight/delight-main#java-delight-suite).
 
-
 [All Project Reports](http://modules.appjangle.com/delight-async/latest/project-reports.html)
+
+## Dependency
+
+Just add the following dependency to your projects.
+
+```
+<dependency>
+    <groupId>org.javadelight</groupId>
+    <artifactId>delight-async</artifactId>
+    <version>[insert latest version]</version>
+</dependency>
+```
+
+This artifact is available on [Maven Central](https://search.maven.org/#search%7Cga%7C1%7Cdelight-async) and 
+[BinTray](https://bintray.com/javadelight/javadelight/delight-async).
+
+[![Maven Central](https://img.shields.io/maven-central/v/org.javadelight/delight-async.svg)](https://search.maven.org/#search%7Cga%7C1%7Cdelight-async)
 
 ## More Reading
 
