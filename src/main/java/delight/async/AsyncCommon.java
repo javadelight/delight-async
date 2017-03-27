@@ -242,6 +242,7 @@ public class AsyncCommon {
             final Aggregator<R> aggregator = collect(operations.size(), callback);
 
             for (final Operation<R> op : operations) {
+
                 op.apply(aggregator.createCallback());
             }
             return;

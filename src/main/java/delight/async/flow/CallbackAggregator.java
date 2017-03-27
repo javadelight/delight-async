@@ -28,6 +28,7 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
         synchronized (callbacksDefined) {
 
             final int callbackIdx = callbacksDefined.get();
+
             callbacksDefined.set(callbackIdx + 1);
 
             if (callbackIdx > expected - 1) {
@@ -62,9 +63,13 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
 
                     boolean callWithMap = false;
                     synchronized (resultsMap) {
+                        assert resultsMap.get(callbackIdx) == null : "Callback for aggregator called twice: "
+                                + callback;
+
                         resultsMap.put(callbackIdx, value);
 
-                        if (CollectionsUtils.isMapComplete(resultsMap, expected)) {
+                        if (resultsMap.size() == expected) {// (CollectionsUtils.isMapComplete(resultsMap,
+                                                            // expected)) {
                             callWithMap = true;
                         }
                     }
@@ -74,19 +79,19 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                         return;
                     }
 
-                    boolean callWithList = false;
-                    synchronized (results) {
-                        results.add(value);
-
-                        if (results.size() == expected) {
-                            callWithList = true;
-                        }
-
-                    }
-                    if (callWithList) {
-                        callback.onSuccess(results);
-                        return;
-                    }
+                    // boolean callWithList = false;
+                    // synchronized (results) {
+                    // results.add(value);
+                    // System.out.println(results.size() + " " + expected);
+                    // if (results.size() == expected) {
+                    // callWithList = true;
+                    // }
+                    //
+                    // }
+                    // if (callWithList) {
+                    // callback.onSuccess(results);
+                    // return;
+                    // }
 
                 }
             };
