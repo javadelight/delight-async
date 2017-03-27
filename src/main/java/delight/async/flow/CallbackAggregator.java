@@ -44,18 +44,12 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                         // only trigger onFailure for first exception received
                         if (exceptionReceived.get() != null) {
                             return;
-                            // throw new RuntimeException(
-                            // "Another exception already received. Cannot send
-                            // exception to callback.\n Previous exception: ["
-                            // + exceptionReceived.get() + "]\n This exception:
-                            // [" + t + "]",
-                            // exceptionReceived.get());
                         }
 
                         exceptionReceived.set(t);
 
-                        callback.onFailure(t);
                     }
+                    callback.onFailure(t);
                 }
 
                 @Override
@@ -68,8 +62,8 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
 
                         resultsMap.put(callbackIdx, value);
 
-                        if (resultsMap.size() == expected) {// (CollectionsUtils.isMapComplete(resultsMap,
-                                                            // expected)) {
+                        if (resultsMap.size() == expected) {
+                            assert CollectionsUtils.isMapComplete(resultsMap, expected);
                             callWithMap = true;
                         }
                     }
@@ -78,20 +72,6 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
                         callback.onSuccess(CollectionsUtils.toOrderedList(resultsMap));
                         return;
                     }
-
-                    // boolean callWithList = false;
-                    // synchronized (results) {
-                    // results.add(value);
-                    // System.out.println(results.size() + " " + expected);
-                    // if (results.size() == expected) {
-                    // callWithList = true;
-                    // }
-                    //
-                    // }
-                    // if (callWithList) {
-                    // callback.onSuccess(results);
-                    // return;
-                    // }
 
                 }
             };
