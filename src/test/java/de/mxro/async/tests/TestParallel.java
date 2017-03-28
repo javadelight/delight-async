@@ -7,6 +7,8 @@ import delight.async.callbacks.ValueCallback;
 import delight.async.jre.Async;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.IntegerRange;
 import org.eclipse.xtext.xbase.lib.Procedures.Procedure0;
 import org.hamcrest.Matcher;
@@ -90,6 +92,44 @@ public class TestParallel {
       @Override
       public void apply(final ValueCallback<List<String>> cb) {
         AsyncCommon.<String, Operation<String>>parallel(ops, 10, cb);
+      }
+    };
+    final List<String> res = Async.<List<String>>waitFor(_function_1);
+    int _size = res.size();
+    boolean _equals = (_size == 100);
+    TestParallel.<Boolean, Boolean>operator_doubleArrow(Boolean.valueOf(_equals), Boolean.valueOf(true));
+  }
+  
+  @Test
+  public void test_with_maxOps_threads() {
+    final List<Operation<String>> ops = new ArrayList<Operation<String>>();
+    IntegerRange _upTo = new IntegerRange(1, 100);
+    for (final Integer i : _upTo) {
+      final Operation<String> _function = new Operation<String>() {
+        @Override
+        public void apply(final ValueCallback<String> cb) {
+          final Runnable _function = new Runnable() {
+            @Override
+            public void run() {
+              try {
+                int _nextInt = new Random().nextInt(100);
+                int _plus = (_nextInt + 1);
+                Thread.sleep(_plus);
+                cb.onSuccess("1");
+              } catch (Throwable _e) {
+                throw Exceptions.sneakyThrow(_e);
+              }
+            }
+          };
+          new Thread(_function).start();
+        }
+      };
+      ops.add(_function);
+    }
+    final Operation<List<String>> _function_1 = new Operation<List<String>>() {
+      @Override
+      public void apply(final ValueCallback<List<String>> cb) {
+        AsyncCommon.<String, Operation<String>>parallel(ops, 15, cb);
       }
     };
     final List<String> res = Async.<List<String>>waitFor(_function_1);

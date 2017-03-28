@@ -7,6 +7,7 @@ import delight.async.jre.Async
 import java.util.ArrayList
 import java.util.List
 import org.junit.Test
+import java.util.Random
 
 @JUnit
 class TestParallel {
@@ -69,6 +70,30 @@ class TestParallel {
 		val res = Async.waitFor(
 			[ cb |
 				AsyncCommon.parallel(ops, 10, cb)
+			])
+
+		(res.size == 100) => true
+
+	}
+	
+	@Test
+	def void test_with_maxOps_threads() {
+
+		val List<Operation<String>> ops = new ArrayList
+		
+		for (i:1..100) {
+			ops.add [cb | 
+				new Thread([
+					Thread.sleep(new Random().nextInt(100)+1)
+					cb.onSuccess("1")
+				]).start
+				
+			]
+		}
+		
+		val res = Async.waitFor(
+			[ cb |
+				AsyncCommon.parallel(ops, 15, cb)
 			])
 
 		(res.size == 100) => true
