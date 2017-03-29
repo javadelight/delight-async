@@ -251,7 +251,7 @@ public class AsyncCommon {
         final List<OP> toRun = operations.subList(0, maxParallelOps);
 
         final List<OP> remaining = operations.subList(maxParallelOps, operations.size());
-        System.out.println("remaining " + remaining.size());
+
         assert operations.size() == toRun.size() + remaining.size() : "Invalid list split: " + operations.size()
                 + " into (" + toRun.size() + " and " + remaining.size() + ")";
 
