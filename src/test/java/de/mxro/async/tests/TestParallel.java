@@ -112,7 +112,8 @@ public class TestParallel {
             @Override
             public void run() {
               try {
-                int _nextInt = new Random().nextInt(100);
+                Random _random = new Random();
+                int _nextInt = _random.nextInt(100);
                 int _plus = (_nextInt + 1);
                 Thread.sleep(_plus);
                 cb.onSuccess("1");
@@ -121,7 +122,8 @@ public class TestParallel {
               }
             }
           };
-          new Thread(_function).start();
+          Thread _thread = new Thread(_function);
+          _thread.start();
         }
       };
       ops.add(_function);
