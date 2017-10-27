@@ -6,6 +6,7 @@ import org.junit.Test
 
 class TestFlowJs {
 	
+	
 	@Test
 	def void test() {
 		
