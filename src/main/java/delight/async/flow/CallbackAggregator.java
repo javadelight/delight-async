@@ -57,13 +57,14 @@ public final class CallbackAggregator<V> implements Aggregator<V> {
 
                     boolean callWithMap = false;
                     synchronized (resultsMap) {
-                        assert resultsMap.get(callbackIdx) == null : "Callback for aggregator called twice: "
-                                + callback;
+                        //assert resultsMap.get(callbackIdx) == null : "Callback for aggregator called twice: "
+                        //        + callback;
+                    	// not valid assert since items in map might be 'null'
 
                         resultsMap.put(callbackIdx, value);
 
                         if (resultsMap.size() == expected) {
-                            assert CollectionsUtils.isMapComplete(resultsMap, expected);
+                            //assert CollectionsUtils.isMapComplete(resultsMap, expected);
                             callWithMap = true;
                         }
                     }
