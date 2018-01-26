@@ -79,7 +79,7 @@ public class Async extends AsyncCommon {
      * @return The result of the deferred operation.
      */
     public static final <T> T waitFor(final Operation<T> operation) {
-        return waitFor(30000, operation);
+        return waitFor(60000, operation);
 
     }
 
